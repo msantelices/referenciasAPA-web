@@ -1,0 +1,429 @@
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+header {
+	background: #088A68;
+	font-size: 18px;
+	padding: 0.75rem 8%;
+}
+
+header p {
+	color: #fff;
+	font-weight: bold;
+	display: inline-block;
+	margin: 0;
+}
+
+header p .fa-file-alt {
+	display: inline-block;
+	font-size: 20px;
+	margin-right: 0.5rem;
+}
+
+header .light {
+	display: inline-block;
+	font-size: 16px;
+	font-style: italic;
+	font-weight: lighter;
+}
+
+header a {
+	color: #fff;
+	display: inline-block;
+	float: right;
+	padding: 0 0.5rem;
+	transition: color 0.15s ease-in-out;
+}
+
+header a:hover {
+	color: #04B45F;
+}
+
+
+
+/* Main */
+.main {
+	margin-top: 3rem;
+	min-width: 90%;
+}
+
+h3 {
+	font-size: 1.35rem;
+	margin-bottom: 2rem;
+}
+
+.italics {
+	font-style: italic;
+}
+
+.cita {
+	display: inline-block;
+}
+
+
+/* Izquierda */
+.izquierda p {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.izquierda .instrucciones {
+	color: #088A68;
+	font-size: 16px;
+	float: right;
+	margin-right: 5%;
+}
+
+.izquierda .instrucciones {
+	text-decoration: none;
+}
+
+.izquierda .btn {
+	background: #088A68;
+	color: #fff;
+	width: 23.25%;
+}
+
+.izquierda .btn:hover {
+	background: #04B45F;
+}
+
+.izquierda .btn:focus,
+.izquierda .btn:active {
+	box-shadow: none;
+	outline: none;
+}
+
+.izquierda .fa-plus {
+	float: left;
+	margin-top: 4px;
+}
+
+.card {
+	margin-top: 3rem;
+	width: 95%;
+}
+
+.card .card-header {
+	background: #088A68;
+	color: #fff;
+	font-size: 18px;
+}
+
+
+/* Derecha */
+.derecha {
+	border-left: 1px solid rgba(0, 0, 0, 0.15);
+	padding: 0 1rem;
+}
+
+.derecha ol li {
+	margin-bottom: 0.5rem;
+}
+
+.derecha ol li .remover{
+	background: none;
+	border: none;
+	color: #088A68;
+	cursor: pointer;
+	float: right;
+	font-weight: bold;
+}
+
+.derecha ol li .remover:focus,
+.derecha ol li .remover:active {
+	box-shadow: none;
+	outline: none;
+}
+
+.derecha .en-texto {
+	margin-bottom: 4rem;
+}
+
+.export-content ol {
+	list-style-position: inside;
+}
+
+
+/* Templates */
+.referencia p {
+	display: inline-block;
+	margin: 0;
+}
+
+.referencia .btn-autor {
+	background: none;
+	border: none;
+	color: #088A68;
+	cursor: pointer;
+	display: inline-block;
+	float: right;
+	font-size: 20px;
+}
+
+.referencia .btn-autor:focus {
+	box-shadow: none;
+	outline: none;
+}
+
+.referencia .btn-autor:active {
+	color: #04B45F;
+}
+
+.referencia .autor input[type="text"] {
+	display: inline-block;
+	padding-left: 0.5rem;
+	width: 49%;
+}
+
+.referencia input[type="text"] {
+	padding-left: 0.5rem;
+	width: 100%;
+}
+
+.referencia .agregar-referencia {
+	text-align: center;
+}
+
+.referencia .agregar-referencia:hover {
+	background: #088A68;
+}
+
+
+
+/* Popup */
+.popup {
+	background: #fff;
+	border: 1px solid #088A68;
+	border-radius: 5px;
+	opacity: 0;
+	padding: 4rem 2rem 2rem 2rem;
+	position: fixed;
+	top: 10%;
+	left: 50%;
+	transition: all 0.5s ease-in-out;
+	transform: translateX(-50%);
+	visibility: hidden;
+	width: 90%;
+	z-index: 1;
+}
+
+.popup-close {
+	background: none;
+	border: none;
+	color: #088A68;
+	cursor: pointer;
+	font-size: 24px;
+	font-weight: bold;
+	position: fixed;
+	top: 0.5rem;
+	left: 1.25rem;
+	transition: all 0.5s ease-in-out;
+	width: 2.5rem;
+	z-index: 2;
+}
+
+.popup-close:focus,
+.popup-close:active {
+	box-shadow: none;
+	outline: none;
+}
+
+.popup h3 {
+	color: #088A68;
+}
+
+.popup ol li {
+	font-size: 18px;
+	margin-bottom: 0.75rem;
+}
+
+
+/* Descargar */
+.descargar {
+	text-align: center;
+	margin-top: 8rem;
+}
+
+.descargar span {
+	font-weight: bold;
+}
+
+.btn-descarga {
+	background: #088A68;
+	color: #fff;
+	margin-bottom: 2rem;
+}
+
+.btn-descarga .fa-file-pdf {
+	margin-right: 0.5rem;
+}
+
+.btn-descarga:focus {
+	outline: none;
+	box-shadow: none;
+}
+
+.btn-descarga:active,
+.btn-descarga:hover {
+	outline: none;
+	box-shadow: 0px 0px 8px 0px #04B45F;
+}
+
+.descargar-app {
+	text-align: center;
+	margin: 4rem 0;
+}
+
+.descargar-app a:hover {
+	text-decoration: none;
+}
+
+.descargar-app .fa-windows {
+	font-size: 3rem;
+	color: #088A68;
+}
+
+.descargar-app p {
+	color: #088A68;
+	margin-top: 0.75rem;
+}
+
+
+/* Contactar */
+.contactar {
+	margin-top: 4rem;
+	text-align: center;
+}
+
+.contactar a {
+	color: #088A68;
+}
+
+.contactar a:hover {
+	text-decoration: none;
+}
+
+
+/* Footer */
+footer {
+	margin-top: 4rem;	
+	text-align: center;
+}
+
+footer p {	
+	background: #088A68;
+	color: #fff;
+	padding: 0.75rem 2rem 0.25rem 2rem;
+	margin: 0;
+}
+
+footer .social {
+	color: #088A68;
+	font-size: 20px;
+	margin: 0 0.25rem 0.5rem 0.25rem;
+}
+
+footer .social:hover {
+	color: #04B45F;
+}
+
+footer .copyright {
+	color: #fff;
+	font-weight: bold;
+}
+
+footer .copyright:hover {
+	color: #04B45F;
+	text-decoration: none;
+}
+
+footer .tech {
+	font-size: 14px;
+}
+
+
+/* Mediaqueries */
+@media screen and (max-width: 992px) {
+	.derecha {
+		border: none;
+		margin-top: 6rem;
+	}
+
+	.popup {
+		height: 75%;
+		overflow-x: hidden;
+		overflow-y: scroll;
+	}
+
+	.popup::-webkit-scrollbar {
+		background: rgba(0, 0, 0, 0.15);
+		border-radius:0 4px 4px 0;
+		width: 0.625rem;
+	}
+
+	.popup::-webkit-scrollbar-thumb {
+		background: #088A68;
+		border-radius: 4px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.card {
+		width: 100%;
+	}
+
+	.izquierda .btn {
+		width: 24.25%;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	header p {
+		text-align: center;
+		width: 100%;
+	}
+
+	.izquierda .btn {
+		margin-bottom: 0.25rem;
+		width: 49%;
+	}
+
+	.popup {
+		padding: 3.5rem 1.5rem 1.5rem 1.5rem;
+		top: 19.5%;
+	}
+
+}
+
+@media screen and (max-width: 400px) {
+	.izquierda .btn {
+		width: 100%;
+	}
+
+	.referencia .autor input[type="text"] {
+		margin-bottom: 0.5rem;
+		width: 100%;
+	}
+
+	.main {
+		margin-top: 2rem;
+	}
+
+	.responsive {
+		display: block;
+		float: none!important;
+		margin-bottom: 3rem;
+		margin-right: 0!important;
+		text-align: center;
+	}
+
+	.popup h3 {
+		font-size: 18px;
+	}
+
+	.popup ol li {
+		font-size: 16px;
+	}
+}

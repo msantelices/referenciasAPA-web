@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+	<link rel="shortcut icon" href="styles/favicon.png" type="image/x-icon">
+	<title>Referencias APA</title>
+
+	<meta name="description" content="Crea citas y referencias segun normas APA de forma automática con esta aplicación">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-63539976-3"></script>
+	<script>
+ 		 window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+
+  		gtag('config', 'UA-63539976-3');
+	</script>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<!-- Fuentes -->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+	<!-- Estilos CSS -->
+	<link rel="stylesheet" href="styles/estilos.min.css">
+</head>
+<body>
+	<header>
+		<p><i class="far fa-file-alt"></i>Referencias APA <span class="d-none d-sm-inline-block">-</span></p>
+		<p class="light">Citas automáticas</p>
+		<a href="https://www.msantelices.com"><i class="fas fa-rss d-none d-sm-inline-block"></i></a>
+		<a href="https://github.com/msantelices/referenciasAPA"><i class="fab fa-github d-none d-sm-inline-block"></i></a>
+	</header>
+
+	<!-- Main -->
+	<div id="app" class="container main">
+		<div class="row">
+			<!-- Izquierda -->
+			<div class="col-sm-12 col-lg-7 izquierda">
+				
+				<instrucciones v-if="windowWidth < 400"></instrucciones>
+				<h3 class="d-inline-block">Agregar referencia:</h3>
+				<instrucciones v-if="windowWidth >= 400"></instrucciones>
+
+				<popup></popup>
+
+
+				<!-- Botones -->
+				<div>
+					<button class="btn" v-on:click="showDoc"><i class="fas fa-plus"></i>PDF/eBook</button>
+					<button class="btn" v-on:click="showArt"><i class="fas fa-plus"></i>Artículo</button>
+					<button class="btn" v-on:click="showLib"><i class="fas fa-plus"></i>Libro</button>
+					<button class="btn" v-on:click="showWeb"><i class="fas fa-plus"></i>Sitio web</button>
+				</div>
+	
+				<!-- Formularios -->
+				<template v-if="templateID === 1">
+					<documento></documento>
+				</template>
+
+				<template v-if="templateID === 2">
+					<articulo></articulo>
+				</template>
+
+				<template v-if="templateID === 3">
+					<libro></libro>
+				</template>
+
+				<template v-if="templateID === 4">
+					<sitio-web></sitio-web>
+				</template>
+
+			</div> <!-- izquierda -->
+
+
+			<!-- Derecha -->
+			<div class="col-sm-12 col-lg-5 derecha">
+
+				<!-- En el texto -->
+				<div class="col-sm-12 en-texto">
+					<h3>En el texto:</h3>
+					<ol>
+						<li v-for="(cita, index) in enTexto"><p class="cita" v-html="cita"></p><button v-on:click="removerRef(index)" class="remover">X</button></li>
+					</ol>
+				</div>
+
+				<!-- Referencias -->
+				<div class="col-sm-12 referencias">
+					<h3>Referencias:</h3>
+					<ol>
+						<li v-for="referencia in referencias"><p v-html="referencia"></p></li>
+					</ol>
+				</div>
+
+
+				<!-- Template a ser exportado - No renderiza -->
+				<div id="export-content" class="d-none export-content">
+					<h3>En el texto:</h3>
+					<ol>
+						<li v-for="cita in enTexto"><p class="cita" v-html="cita"></p></li>
+					</ol>
+
+					<h3>Referencias:</h3>
+					<ol>
+						<li v-for="referencia in referencias"><p v-html="referencia"></p></li>
+					</ol>
+				</div>
+
+			</div> <!-- derecha -->
+
+		</div> <!-- row -->
+
+		<div class="descargar">
+			<button v-on:click="downloadPDF" class="btn btn-descarga"><i class="fas fa-file-pdf"></i>Descargar PDF</button>
+			<p><span>NOTA:</span> Las referencias se encuentran por orden de ingreso, no por orden alfabético</p>
+		</div>
+
+		<hr>
+
+		<div class="descargar-app">
+<<<<<<< HEAD
+			<a href="download/referencias_apa_setup_1.0.0.zip"><i class="fab fa-windows"></i><p>Descargar la app para Windows (.zip)</p></a>
+=======
+			<a href="https://github.com/msantelices/refererenciasAPA-web/blob/master/download/referencias_apa_setup_1.0.0.exe" download><i class="fab fa-windows"></i><p>Descargar la app para Windows</p></a>
+>>>>>>> 91c2dc3ddc68fe6d129640dc24c3a2494a003717
+		</div>
+
+		<hr>
+
+		<div class="contactar">
+			<a class="contacto" href="https://www.msantelices.com/#contacto">Contacto/Reportar un problema</a>
+		</div>
+		
+
+
+	</div> <!-- main -->
+
+
+	<footer>
+		<a href="https://www.msantelices.com"><i class="fas fa-rss d-inline-block d-sm-none social"></i></a>
+		<a href="https://github.com/msantelices/referenciasAPA"><i class="fab fa-github d-inline-block d-sm-none social"></i></a>
+		<p class="footer-text">Referencias APA | <a class="copyright" href="https://www.msantelices.com">Mauricio Santelices</a></p>
+		<p class="tech">Desarrollado en Vue y Electron JS</p>
+	</footer>
+
+
+
+
+<!-- JS -->
+<!-- CDN -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js" integrity="sha384-CchuzHs077vGtfhGYl9Qtc7Vx64rXBXdIAZIPbItbNyWIRTdG0oYAqki3Ry13Yzu" crossorigin="anonymous"></script>
+
+<!-- Main -->
+<script src="script/main.min.js"></script>
+
+</body>
+</html>
